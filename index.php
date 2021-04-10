@@ -1,20 +1,20 @@
 <?php
-require_once 'estudiantes/hero.php';
+require_once 'transas/hero.php';
 require_once 'FileHandler/IFileHandler.php';
 require_once 'FileHandler/FileHandlerBase.php';
 require_once 'FileHandler/SerializationFileHandler.php';
 require_once 'FileHandler/JsonFileHandler.php';
 require_once 'helpers/utilities.php';
-require_once 'estudiantes/serviceSession.php';
-require_once 'estudiantes/ServiceCookies.php';
-require_once 'estudiantes/ServiceFile.php';
+require_once 'transas/serviceSession.php';
+require_once 'transas/ServiceCookies.php';
+require_once 'transas/ServiceFile.php';
 require_once 'layout/layout.php';
 
 $layout = new Layout(true);
 $service = new ServiceFile(true);
 $utilities = new Utilities();
 
-$estudiantes = $service->GetList();
+$transas = $service->GetList();
 
 
 ?>
@@ -25,8 +25,8 @@ $estudiantes = $service->GetList();
     <div class="col-md-10"></div>
     <div class="col-md-2">
 
-        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#nuevo-estudiante-modal">
-            Nuevo estudiante
+        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#nuevo-transa-modal">
+            Nuevo transa
         </button>
 
     </div>
@@ -47,13 +47,13 @@ $estudiantes = $service->GetList();
           
 <div class="row">
 
-    <?php if (count($estudiantes) == 0) : ?>
+    <?php if (count($transas) == 0) : ?>
 
-    <h2>No hay estudiantes registrados</h2>
+    <h2>No hay transas registrados</h2>
 
     <?php else : ?>
 
-    <?php foreach ($estudiantes as $key => $hero) : ?>
+    <?php foreach ($transas as $key => $hero) : ?>
 
 
     
@@ -73,7 +73,7 @@ $fecha = new DateTime(); echo $fecha->getTimestamp();
                     <td><?= $hero->Description ?></td>
 
 
-                    <td><a href="estudiantes/edit.php?id=<?= $hero->Id ?>" class="btn btn-primary">Editar</a></td>
+                    <td><a href="transas/edit.php?id=<?= $hero->Id ?>" class="btn btn-primary">Editar</a></td>
 
                     <td><a href="#" data-id="<?= $hero->Id ?>" class="btn btn-danger btn-delete">Eliminar</a></td>
                 </tr>
@@ -86,17 +86,17 @@ $fecha = new DateTime(); echo $fecha->getTimestamp();
     </div>
 </div>
 
-<div class="modal fade" id="nuevo-estudiante-modal" tabindex="-1" aria-labelledby="nuevoestudianteLabel"
+<div class="modal fade" id="nuevo-transa-modal" tabindex="-1" aria-labelledby="nuevotransaLabel"
     aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="nuevoestudianteLabel">Nuevo estudiante</h5>
+                <h5 class="modal-title" id="nuevotransaLabel">Nuevo transa</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
 
-                <form action="estudiantes/add.php" method="POST">
+                <form action="transas/add.php" method="POST">
 
 
                    <div class="mb-3">

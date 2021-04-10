@@ -50,7 +50,7 @@ if (isset($_POST["heroId"]) && isset($_POST["imgId"]) && isset($_POST["HeroName"
     <?php echo $layout->printHeader() ?>
 
     <?php if ($hero == null) : ?>
-        <h2>No existe este estudiante</h2>
+        <h2>No existe este transa</h2>
     <?php else : ?>
 
         <form action="edit.php" method="POST">
