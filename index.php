@@ -31,8 +31,8 @@ $transas = $service->GetList();
 
     </div>
 </div>
-
-                <table class="table">
+<!--
+            <table class="table">
             <thead>
                 <tr>
                     <th scope="col">#</th>
@@ -43,7 +43,7 @@ $transas = $service->GetList();
                     <th scope="col">edit</th>
                     <th scope="col">delete</th>
                 </tr>
-            </thead>
+            </thead>-->
           
 <div class="row">
 
@@ -60,6 +60,18 @@ $transas = $service->GetList();
     <div class="card-body">
 
                 <table class="table">
+                            
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Datos</th>
+                    <th scope="col">monto</th>
+                    <th scope="col">fecha</th>
+                    <th scope="col">Descripcion</th>
+                    <th scope="col">edit</th>
+                    <th scope="col">delete</th>
+                </tr>
+            </thead>
             <tbody>
                 <tr>
                     <th scope="row"><?= $hero->Id?></th>
